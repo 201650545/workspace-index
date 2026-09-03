@@ -6,14 +6,17 @@
 
 ```
 workspace-index/
-├─ projects.yaml   ← 路由真源（WHERE）
-├─ concepts/       ← 概念语义真源（WHAT / NOT WHAT）：概念解释器
-│  ├─ README.md    ← 解释器总入口
-│  ├─ TEMPLATE.md  ← 六字段模板
-│  ├─ 00-体系与层级.md
-│  ├─ 10-项目与仓库.md
-│  ├─ 20-AI平台.md
-│  └─ 30-Memory.md
+├─ projects.yaml       ← 路由真源（WHERE）
+├─ concepts/           ← 概念语义真源（WHAT / NOT WHAT）：概念解释器
+│  ├─ README.md        ← 解释器总入口
+│  ├─ TEMPLATE.md      ← 六字段 + 文件/目录用途 + 冲突裁决 + 粒度宪法
+│  ├─ 00-体系总览.md   Vault/仓/项目/模块/数据层 关系
+│  ├─ 01-项目索引与路由.md   projects.yaml 边界说明
+│  ├─ 02-Work-Vault.md     03-Memory-Vault.md
+│  ├─ common-concepts.md   跨域概念（项目≠文件夹≠Vault 等）
+│  ├─ projects/        ← 每个一级项目的解释条目
+│  ├─ modules/         ← 项目内部模块/分类细节
+│  └─ CONSULT-2026-09-03-gpt-extended.md  ← GPT 原始问诊回复（定稿依据）
 └─ STATUS.md
 ```
 
