@@ -1,0 +1,25 @@
+# AI 路由表：外部 AI 从这里开始定位项目
+workspace:
+  owner: 201650545
+  updated_at: 2026-09-03
+
+projects:
+  - id: nitian-theme
+    repo: https://github.com/201650545/nitian-theme
+    name: 逆天主题（仙逆）游戏
+    status: active
+    visibility: public
+    entry: README.md
+    task_board: docs/01-任务看板.md
+    handbook: v1.0
+
+  - id: handbook
+    repo: https://github.com/201650545/handbook
+    name: 跨项目通用规范总库
+    status: active
+    visibility: public
+    entry: README.md
+
+# 待接入（补齐自解释 README + project.yaml 后在此登记）：
+#   - ai-hub-memory   记忆项目（已有独立 git 同步）
+#   - gateway         网关项目
