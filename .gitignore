@@ -1,0 +1,8 @@
+# 索引仓无资产，兜底即可
+*.png
+*.jpg
+*.zip
+*.log
+Thumbs.db
+.DS_Store
+.obsidian/
