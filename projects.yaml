@@ -20,6 +20,25 @@ projects:
     visibility: public
     entry: README.md
 
-# 待接入（补齐自解释 README + project.yaml 后在此登记）：
-#   - ai-hub-memory   记忆项目（已有独立 git 同步）
-#   - gateway         网关项目
+  - id: ai-platform
+    repo: https://github.com/201650545/ai-platform
+    name: AI 平台（ai-platform）
+    status: active
+    visibility: public
+    entry: README.md
+    desc: AI 基建主仓：多网关聚合、AI 搜索、GitHub 管理、飞书集成、Agent 记忆协议、资源运营
+    migration: 2026-09-03 由 ai-hub + ai-resource-hub + feishu-data-hub + ai-hub-memory(协议) 整合而成，映射见 docs/migration/path-map.md
+
+  - id: ai-hub-memory
+    repo: https://github.com/201650545/ai-hub-memory
+    name: 多 Agent 共享记忆（运行仓）
+    status: active
+    visibility: public
+    entry: README.md
+    desc: 记忆运行系统唯一真源（STATE/DECISIONS/工具链）；协议文档快照见 ai-platform 的 agent/memory/
+
+# 已整合（勿再引用旧仓，事实源在 ai-platform）：
+#   - ai-hub            → ai-platform（根目录）
+#   - ai-resource-hub   → ai-platform/resource-ops/
+#   - feishu-data-hub   → ai-platform/integrations/feishu/
+# 生活域独立仓：english-teaching-production；私有仓：financial-security-plan（永不公开）
