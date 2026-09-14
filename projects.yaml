@@ -1,7 +1,7 @@
 # AI 路由表：外部 AI 从这里开始定位项目
 workspace:
   owner: 201650545
-  updated_at: 2026-09-03
+  updated_at: 2026-09-14
 
 projects:
   - id: nitian-theme
@@ -37,8 +37,22 @@ projects:
     entry: README.md
     desc: 记忆运行系统唯一真源（STATE/DECISIONS/工具链）；协议文档快照见 ai-platform 的 agent/memory/
 
+  - id: english-listening-trainer
+    repo: https://github.com/201650545/english-listening-trainer
+    name: 英语逐句精听工具
+    status: active
+    visibility: private
+    entry: README.md
+    task_board: docs/01-任务看板.md
+    handbook: v1.0
+    desc: 把任意英语视频/音频切成一句一段、每句单独循环反复听的自用工具。前端单个 HTML（零依赖），后端本机 Python 服务（Range 串流 + 导入任务 + 素材库），手机浏览器走局域网访问。
+    local: D:\Work\英语精听App
+    created: 2026-09-14
+    note: 独立新项目，与 english-teaching-production（教学交付物）无关，勿合并
+
 # 已整合（勿再引用旧仓，事实源在 ai-platform）：
 #   - ai-hub            → ai-platform（根目录）
 #   - ai-resource-hub   → ai-platform/resource-ops/
 #   - feishu-data-hub   → ai-platform/integrations/feishu/
 # 生活域独立仓：english-teaching-production；私有仓：financial-security-plan（永不公开）
+# 私有仓：english-listening-trainer（英语逐句精听工具，本机自用）
