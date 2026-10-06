@@ -1,7 +1,7 @@
 # AI 路由表：外部 AI 从这里开始定位项目
 workspace:
   owner: 201650545
-  updated_at: 2026-09-14
+  updated_at: 2026-09-29
 
 projects:
   - id: nitian-theme
@@ -19,6 +19,7 @@ projects:
     status: active
     visibility: public
     entry: README.md
+    local: D:\Work\通用规范
 
   - id: ai-platform
     repo: https://github.com/201650545/ai-platform
@@ -28,6 +29,7 @@ projects:
     entry: README.md
     desc: AI 基建主仓：多网关聚合、AI 搜索、GitHub 管理、飞书集成、Agent 记忆协议、资源运营
     migration: 2026-09-03 由 ai-hub + ai-resource-hub + feishu-data-hub + ai-hub-memory(协议) 整合而成，映射见 docs/migration/path-map.md
+    local: D:\Work\AI平台
 
   - id: ai-hub-memory
     repo: https://github.com/201650545/ai-hub-memory
@@ -36,9 +38,81 @@ projects:
     visibility: public
     entry: README.md
     desc: 记忆运行系统唯一真源（STATE/DECISIONS/工具链）；协议文档快照见 ai-platform 的 agent/memory/
+    status_note: 2026-10-06 已整合 —— 唯一可写本体 D:\\项目\\ai-hub-memory，D:\\ai-hub-memory 改为 junction 指向它
+
+  # —— 2026-09-29 补登记：以下两仓真实存在且活跃，此前漏登记 ——
+  - id: yongtai-memory
+    repo: https://github.com/201650545/yongtai-memory
+    name: 个人记忆真源的发布镜像
+    status: active
+    visibility: public
+    entry: README.md
+    local: D:\记忆
+    desc: 人的记忆／调度大脑长期上下文。**可写真源是本地 D:\记忆，本仓只是单向发布的只读镜像**。与 ai-hub-memory 是不同数据类型，handbook §6 明令不得为"仓库少"强行合并
+    authority: D:\Work\通用规范\50-知识管理三工具规范.md §6
+
+  - id: listenloop-project
+    repo: https://github.com/201650545/listenloop-project
+    name: ListenLoop（AI 精听训练器）发布仓
+    status: active
+    visibility: public
+    entry: README.md
+    local: D:\Work\gh-sync\listenloop-project
+    handoff: D:\Work\gh-sync\HANDOFF-2026-09-29.md   # 2026-09-30 挂号：交接包已存在但尚未被当前 Agent 读验接手
+    curated: D:\Work\gh-sync\listenloop-curated      # github.com/201650545/listenloop-curated，评审/调研文档仓
+    desc: ⚠️ 本地工作台目录名 `gh-sync` 与内容不符——它实际是 ListenLoop 的 GitHub 发布台 + GPT 问诊工作台（2026-09-28 仍在改）。文档真源 D:\Work\AI精听训练器\，代码真源 D:\listenloop\
+    todo: 目录改名待郭老师点头（有 9 处入向引用需同步）
+
+  - id: workspace-index
+    repo: https://github.com/201650545/workspace-index
+    name: 本仓（vault 路由真源）
+    status: active
+    visibility: public
+    entry: README.md
+    local: D:\Work\项目索引
+    migration: 2026-09-29 从 D:\Work\dsh-personal-host\项目索引\ 救出提到 Work 顶层——它原先埋在一个停更项目里，而 projects.yaml 全机只有一份
 
 # 已整合（勿再引用旧仓，事实源在 ai-platform）：
 #   - ai-hub            → ai-platform（根目录）
 #   - ai-resource-hub   → ai-platform/resource-ops/
 #   - feishu-data-hub   → ai-platform/integrations/feishu/
 # 生活域独立仓：english-teaching-production；私有仓：financial-security-plan（永不公开）
+
+# —— 本地项目（无独立 GitHub 仓，按既有规矩不进 projects 列表，但外部 AI 需要知道它们在哪）——
+# 登记前提见 D:\Work\元智能\10_AI自成长引擎\双引擎立项收口交接_给执行Agent_20260919.md:181「以有独立 repo 为登记前提」
+local_only:
+  - name: 元智能
+    path: D:\Work\元智能
+    desc: 系统级治理本体（技能设计与治理、工作流与自动化、AI 自适应）。入口 generated/human/00_首页.md
+  - name: 贾维斯中控（原 Remote-Coding-Control / Codemote）
+    path: D:\Work\贾维斯中控
+    desc: 手机遥控电脑（贾维斯愿景）。2026-09-29 改中文名。语音远程控制电脑。手机=语音遥控器，电脑=执行体（Jev 路由 → 能力执行器矩阵）。依赖网关 :3100/v1/jev
+    infra: 阿里 99 ECS（2C2G/3M 固定带宽，99元/年锁价至 2029-03-31）**已在跑 frps 中转＋:3100 网关＋Uptime Kuma**，不是"远端执行体候选"；腾讯轻量 Hermes（2C2G/50G 北京）＝staging，2026-10-29 到期；腾讯 4核4G 109/年＝消耗品定位（活动截止 2026-10-12）。2026-09-29 已裁「云端算力购买话题关闭，现在不买任何服务器」，四条加购触发条件见唯一真源 D:\Work\贾维斯中控\07-Decisions\2026-09-29-服务器与商业化决策记录.md；跨项目联合点（谁与谁同机）见 D:\记忆\调度大脑记忆\参考\reference_云服务器底座与跨项目联合点.md  # 09-30 旧表述"2核2G 作候选／4核4G 在考虑"系按郭老师口述误记，未读 09-29 决策档；同日按决策档改正
+  - name: API转发网关（原 api-gateway）
+    path: D:\Work\API转发网关
+    runtime: D:\项目\ai-hub\search_gateway   # 运行体真源：代码/渠道编排规则.md/model_routes.json/channels.json 都在这里。D:\Work\API转发网关 是文档仓，其 渠道编排规则.md 停在 09-22 已 stale（2026-09-30 验收实测，双真源分叉见元智能待裁定 #28）
+    desc: 本机 AI 转发网关，端点 :3100。**全系统最大单点**：9 个项目依赖它（入度 202），而它的文档没有登记任何依赖方
+  - name: 小红书点赞分析
+    path: D:\Work\小红书点赞分析
+    desc: 小红书每日点赞提取 + AI 总结。宿主 Trae，计划任务 XHS_LikeManager_Daily 每日 10:17
+  - name: AI精听训练器
+    path: D:\Work\AI精听训练器
+    desc: ListenLoop 文档真源（实测 45 份 .md、6 个子目录：00_项目驾驶舱_可视化中心／01_商业与战略规划／02_工程架构与系统设计／03_研发日志与历史归档／04_Agent机器索引_快速通道／dist），代码真源 D:\listenloop；GitHub 发布台见 listenloop-project  # 2026-10-01 审计修正：原未在 projects/local_only 登记（只在 listenloop-project 的 desc 散文里提过），实测计数后补登
+  - name: 启迪 / 跃己 / 课程思政教学竞赛 / 项目学习
+    path: D:\Work\
+    desc: 见 vault_registry.yaml 与 Home.md 子库一览
+
+archived_2026_09_29:
+  - name: 飞书
+    from: D:\Work\飞书
+    to: D:\Work\_归档\飞书
+    why: 20 张飞书多维表格的「介绍+结构」说明书目录，全部文件停在 2026-09-08；实测零外部引用（grep 全 Work 与记忆库无命中）；导出管线真身已并入 AI平台\integrations\feishu\。归档不删——这些说明文本本地仅此一份
+  - name: dsh-personal-host
+    from: D:\Work\dsh-personal-host
+    to: D:\Work\_归档\dsh-personal-host
+    why: DeepSeek Harness 专属宿主的设计/盘点文档，停在 2026-09-05；20-implementation、scripts、tests 经实测为空骨架；插件真码在 ~/.dsh/nitian-stage/src 与 逆天主题\dsh-plugin\pkg。原 README 自称"唯一事实源"与实测不符。其下 项目索引\ 已先救出
+  - name: 微信通知自动化
+    from: D:\Work\微信通知自动化
+    to: D:\Work\贾维斯中控\09-Experiments\微信通知自动化
+    why: 郭老师 2026-09-29 裁定——已更新为 Codemote 的附属实验；远程控制走模型 computer use 操作整台电脑，独立的微信通知项目不再需要。非归档、是并入
+
