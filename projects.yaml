@@ -75,8 +75,9 @@ projects:
 # 已整合（勿再引用旧仓，事实源在 ai-platform）：
 #   - ai-hub            → ai-platform（根目录）
 #   - ai-resource-hub   → ai-platform/resource-ops/
-#   - feishu-data-hub   → ai-platform/integrations/feishu/
-# 生活域独立仓：english-teaching-production；私有仓：financial-security-plan（永不公开）
+#   - feishu-data-hub   → ai-platform/integrations/feishu/（**GitHub 仓已于 2026-10-08 删除**，零差异核对后删；随仓丢失的只有 secrets FDH_NAME_BLACKLIST）
+# 生活域独立仓：~~english-teaching-production~~（**GitHub 仓已于 2026-10-08 删除**：PUBLIC 仓顶层用 7 名学生真名＋含学生档案，违反自身红线 R1 与 handbook 40-安全红线；郭老师裁定"只留有用两点"⇒精华已抽到 `D:\Work\课件与练习生产\`，原 1370 文件无本地克隆、不可追）
+# 私有仓：financial-security-plan（永不公开，已归档）
 
 # —— 本地项目（无独立 GitHub 仓，按既有规矩不进 projects 列表，但外部 AI 需要知道它们在哪）——
 # 登记前提见 D:\Work\元智能\10_AI自成长引擎\双引擎立项收口交接_给执行Agent_20260919.md:181「以有独立 repo 为登记前提」
@@ -84,6 +85,10 @@ local_only:
   - name: 元智能
     path: D:\Work\元智能
     desc: 系统级治理本体（技能设计与治理、工作流与自动化、AI 自适应）。入口 generated/human/00_首页.md
+  - name: 课件与练习生产
+    path: D:\Work\课件与练习生产
+    desc: HTML 交互课件 ＋ DOCX 配套练习卷的生产规范与引擎（2026-10-08 从已删除的 `english-teaching-production` 仓按"只留两点"抽出）。含 2 份精简规范 md、12 个 Python 引擎/验证器（语法自检通过）、3 份生成模板、2 份 exam_spec JSON、3 档样例课件，合计 35 文件 / 1.83MB
+    caution: **不是独立 git 仓**（随 Work 根仓跟踪），且原仓已删 ⇒ 这份是唯一留存，原 1370 文件与 51 次提交不可追
   - name: 贾维斯中控（原 Remote-Coding-Control / Codemote）
     path: D:\Work\贾维斯中控
     desc: 手机遥控电脑（贾维斯愿景）。2026-09-29 改中文名。语音远程控制电脑。手机=语音遥控器，电脑=执行体（Jev 路由 → 能力执行器矩阵）。依赖网关 :3100/v1/jev
